@@ -15,9 +15,8 @@ public struct PrintLogger: LoggerProtocol {
 
     public func log(level: OSLogType, _ message: LogMessageType) {
         let bundleId = Bundle.main.bundleIdentifier
-        let filename = URL(string: #file)?.lastPathComponent ?? ""
         print(level.emoji, message)
-        print("\t", category, "(\(subsystem == bundleId ? filename : subsystem))")
+        print("\t", category, "(\(subsystem))")
     }
 }
 
